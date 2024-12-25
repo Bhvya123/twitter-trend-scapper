@@ -39,9 +39,10 @@ This project is a Python-based web scraper that logs into Twitter, fetches the t
    ```
 
 3. Create a `.env` file and configure the following environment variables:
-   ```env
+   ```python
    MONGOUSER=your_mongo_username
    MONGOPASS=your_mongo_password
+   MONGOAPPNAME=your_mongo_appname  # Optional
    PROXYMESH_HOSTNAME=your_proxymesh_host
    PROXYMESH_PORT=your_proxymesh_port
    PROXYMESH_USERNAME=your_proxymesh_username
@@ -85,7 +86,17 @@ This project is a Python-based web scraper that logs into Twitter, fetches the t
 ---
 ## Example Output
 
-### JSON Data Stored in MongoDB:
+### Twitter Trending Topics
+These are the most happening topics as on 2024-12-26T02:54:19.703964:
+
+- Manti Te
+- H-1B
+- Nate Burleson
+- Kay Adams
+
+The IP address used for this query was 45.32.72.75.
+
+#### JSON Extract:
 ```json
 {
     "_id": "676c6d36a1082d0da0692007",
@@ -98,7 +109,10 @@ This project is a Python-based web scraper that logs into Twitter, fetches the t
     "trend5": null,
     "unique_id": "c21adf60-6c1f-492f-8ffc-1b474ae54c3a"
 }
+
 ```
+
+Click here to run the query again
 
 ## Note:
 - The `trend5` field may be `null` if there are fewer than 5 trending topics shown on the whats happening section on the twitter homepage.

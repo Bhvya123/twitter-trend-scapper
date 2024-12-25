@@ -29,12 +29,13 @@ PATH = os.getenv('DRIVER_PATH')
 # Get MongoDB credentials
 mongo_user = os.getenv('MONGOUSER')
 mongo_pass = os.getenv('MONGOPASS')
+mongo_appname = os.getenv('MONGOAPPNAME')
 
 # Ensure password is URL-encoded
 encoded_password = quote_plus(mongo_pass)
 
 # Construct the URI
-uri = f"mongodb+srv://{mongo_user}:{encoded_password}@cluster0.4talj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+uri = f"mongodb+srv://{mongo_user}:{encoded_password}@cluster0.4talj.mongodb.net/?retryWrites=true&w=majority&appName={mongo_appname}"
 
 # Create a new client and connect to the server
 try:
