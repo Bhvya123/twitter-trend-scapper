@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trending Topics</title>
+</head>
+<body>
+    <h1>Twitter Trending Topics</h1>
+    <p>These are the most happening topics as on {{ datetime }}:</p>
+    <ul>
+        {% for topic in topics %}
+        <li>{{ topic }}</li>
+        {% endfor %}
+    </ul>
+    <p>The IP address used for this query was {{ ip_address }}.</p>
+    <h3>JSON Extract:</h3>
+    <pre>{{ json_data | tojson(indent=4) }}</pre>
+    <br>
+    <a href="/">Click here to run the query again</a>
+</body>
+</html>
